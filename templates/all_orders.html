@@ -1,0 +1,19 @@
+{%extends 'menu_bar.html'%}
+
+{%block title%}orders{%endblock%}
+
+{%block content%}
+        <div class="orders">
+            <h2 class="profile_h2">Orders</h2>
+            <p style="color: black;">last 3 records</p>
+            <ul id="orders-list">
+                {% for order in orders %}
+                <li style="color:black">Order #{{order.get('order_id')}}: {{order.get('ordered_product')}} - <strong>&dollar;{{order.get('tol_prize')}}</strong></li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+
+    <!-- <li style="color:black">Order #2: Smartphone - <strong>Shipped</strong></li>
+    <li style="color:black">Order #3: Headphones - <strong>Pending</strong></li> -->
+{%endblock%}
